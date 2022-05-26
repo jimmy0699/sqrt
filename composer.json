@@ -11,5 +11,12 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "require-dev": {
+        "pestphp/pest-plugin-parallel": "^1.1"
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest",
+        "test-coverage": "./vendor/bin/pest --coverage"
     }
 }
