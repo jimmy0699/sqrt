@@ -9,7 +9,7 @@ class Sqrt {
         if ($num < 0) {
             return NAN;
         } else {
-            for ($i = 1; $i <= $num; $i++) {
+            for ($i = 0; $i <= $num; $i++) {
                 if ($i * $i == $num) {
                     return $i;
                 } elseif (($i + 1) * ($i + 1) > $num) {
