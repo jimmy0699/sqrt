@@ -6,7 +6,7 @@ class Sqrt {
 
 	public function pierwiastek($num, $mpp)
     {
-        if ($num < 1) {
+        if ($num < 0) {
             return NAN;
         } else {
             for ($i = 1; $i <= $num; $i++) {

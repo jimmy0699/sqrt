@@ -7,5 +7,5 @@ test('example', function ($value) {
 
     expect($r)->toEqual(round(sqrt($value), 10));
 })->with([
-    1,3,4,5,7,9,231,526,-1, 9572.384
+    0,1,3,4,5,7,9,231,526,-1, 9572.384
 ]);
