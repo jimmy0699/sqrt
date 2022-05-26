@@ -6,8 +6,8 @@ class Sqrt {
 
 	public function pierwiastek($num, $mpp)
     {
-        if ($num < 1) {
-            return 'liczba musi byc wieksza od zera';
+        if ($num < 0) {
+            return NAN;
         } else {
             for ($i = 1; $i <= $num; $i++) {
                 if ($i * $i == $num) {
@@ -16,6 +16,11 @@ class Sqrt {
                     $po_kropce = 0;
                     for ($a = 0; $a <= $mpp; $a++) {
                         $po_kropce += $this->dokladnosc($a, $i, $num, $po_kropce);
+                    }
+                    $do_zaokraglenia = $this->dokladnosc($mpp+1, $i, $num, $po_kropce) * (10**($mpp+1));
+                    
+                    if ($do_zaokraglenia >= 5) {
+                        return $i + $po_kropce + (10**(-$mpp));
                     }
                     return $i + $po_kropce;
                 }
