@@ -3,7 +3,7 @@
 use Sqrt\Sqrt;
 
 it('square root corectly', function ($value) {
-    $r = ((new Sqrt)->pierwiastek($value, 10));
+    $r = ((new Sqrt)->sqrt_newton($value, 10));
 
     expect($r)->toEqual(round(sqrt($value), 10));
 })->with([
@@ -11,7 +11,7 @@ it('square root corectly', function ($value) {
 ]);
 
 it('square root negatives', function($value) {
-    $r = ((new Sqrt)->pierwiastek($value, 10));
+    $r = ((new Sqrt)->sqrt_newton($value, 10));
 
     expect($r)->toBeNan();
 })->with([
