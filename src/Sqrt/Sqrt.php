@@ -39,4 +39,27 @@ class Sqrt {
             }
         }
     }
+
+    public function sqrt_newton($num, $mpp)
+    {
+        if ($num < 0) {
+            return NAN;
+        }
+        if ($num == 0) {
+            return 0;
+        }
+        $next_mpp = $mpp+1;
+        $x = 1;
+        for ($i=0; $i <= $next_mpp; $i++) {
+            $x = 0.5*($x+$num/$x);
+        }
+        $to_round = intval($x * 10**($next_mpp));
+        $last = $to_round % 10;
+        $natural_x = intval($x * 10**($mpp));
+        $xx = $natural_x * (10**(-$mpp));
+        if ($last >= 5) {
+            return $xx + (10**(-$mpp));
+        }
+        return $xx;
+    }
 }
